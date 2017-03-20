@@ -38,3 +38,19 @@
       - bottom font color of card #9A9A9A
       - font seems to be a sans-serif, actually graphik font from Commercial Type. Cost $700. Sans Serif it is!
     - hover has an outer glow type effect on image cards
+
+### Filling the page
+- do I have to manually set up the cards or will the api populate the page with it?
+- API accessed. Which API items are we looking for?
+  - image => item.images
+    - images[{
+      url_75x75: "url goes here",
+      url_170x135: "url goes here",
+      url_570xN: "url goes here",
+      url_fullxfull: "url goes here",
+      full_height: 1000,
+      full_width: 1500,
+      }]
+  - title => item.title
+  - shop name =>
+  - price => item.price
