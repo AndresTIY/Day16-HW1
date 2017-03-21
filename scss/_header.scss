@@ -1,0 +1,41 @@
+header {
+  background: #FFFFFF;
+  width: 100%;
+  .top {
+    padding: 1rem;
+  }
+
+  .logo {
+    width: 5rem;
+    vertical-align: middle;
+  }
+  .bottom {
+    font-size: .9rem;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    ul {
+      list-style:none;
+      padding-bottom: 1rem;
+
+    }
+    li {
+      float: left;
+      padding: 0 1rem;
+    }
+  }
+}
+header:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.bottom:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+@media (max-width: 1013px) {
+  .clear {
+    display: none;
+  }
+}

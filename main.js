@@ -29,7 +29,7 @@ var settings = {
   success: function(data, status, xhr){
     var results = data.results;
     results.forEach(function(item, i, arr){
-      var images = item.Images[0].url_170x135;
+      var images = item.Images[0  ].url_170x135;
       var shop = item.Shop.shop_name;
       // var $title = $('<p class="title">'+item.title+'</p>');
       // var $price = $('<span class="price">'+item.price+'</span>');
