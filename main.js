@@ -1,41 +1,53 @@
 var apiKey = '?api_key=p58fg5dzzpm5wi3gtudtfa53';
-var succSearch = 'https://api.etsy.com/v2/listings/active.js?api_key=p58fg5dzzpm5wi3gtudtfa53&keywords=%22succulents%22&includes=Images,Shop';
+// var succSearch = 'https://api.etsy.com/v2/listings/active.js?api_key=p58fg5dzzpm5wi3gtudtfa53&keywords=%22succulents%22&includes=Images,Shop';
 //------------------KEYWORD ATTEMPT------------------
-// var keyword = 'glass';
-// var searchPartial = '&keywords=%22';
-// var searchPartial2 = '%22&includes=Images,Shop';
-// var search = searchPartial + keyword + searchPartial2
+
+
+var keyword = "cats";
+var searchPartial = '&keywords=%22';
+var searchPartial2 = '%22&includes=Images,Shop';
+var search = searchPartial + keyword + searchPartial2;
+var apiUrl = 'https://api.etsy.com/v2/listings/active.js';
 // url: 'https://api.etsy.com/v2/listings/active.js' + apiKey + keyword,
-// keyword stuff not working rn
+// keyword stuff not working rn, it works now!
 //---------------------------------------------------
+//--------------------Search Click--------------------
+
+$('#submit').on('click', function(item, i, arr){
+  keyword = $('#search').val();
+})
+
+
 
 
 
 var settings = {
   type: 'GET',
-  url: succSearch,
+  url: apiUrl + apiKey + search,
+  // url: succSearch,
   dataType: 'jsonp',
   success: function(data, status, xhr){
     var results = data.results;
     results.forEach(function(item, i, arr){
-      console.log(item.title);
-
-      console.log(item.price);
-
-      console.log(item.Shop.shop_name);
-
-      console.log(item.Images[0].url_fullxfull);
-
+      var images = item.Images[0].url_170x135;
+      var shop = item.Shop.shop_name;
+      // var $title = $('<p class="title">'+item.title+'</p>');
+      // var $price = $('<span class="price">'+item.price+'</span>');
+      // var $price = item.price;
+      // var $shopName = $('<span class="shop">'+ shop +'</span>');
+      // var $image = $('<div class="image-container"><img src="'+ images +'"></div>');
+      var test = $('<div class="card"><div class="image-container"><img src="'+ images +'"></div><p class="title">'+item.title+'</p><p><span class="shop">'+ shop +'</span><span class="price">$'+item.price+'</span></p></div>');
+      $('.container').append(test);
     })
   }
 };
-
-
-
-
-
-
 $.ajax(settings);
+
+
+// $.ajax(settings);
+
+
+
 
 
 
@@ -43,28 +55,12 @@ $.ajax(settings);
 
 //success in settings is the almost the same as .then() method
 // $.ajax(settings).then(function(data, status, xhr){
-//
-//   var results = data.results;
-//   var title = results.forEach(function(item, i, arr){
-//     console.log(item.title);
-//   });
-//   var price = results.forEach(function(item, i, arr){
-//     console.log(item.price);
-//   });
-//   var shopName = results.forEach(function(item, i, arr){
-//     var shops = item.Shop;
-//     console.log(shops.shop_name);
-//   });
-//   var images = results.forEach(function(item, i, arr){
-//     var image = item.Images;
-//     var imgUrl = image.forEach(function(item, i, arr){
-//       console.log(item.url_75x75);
-//     });
-//   });
-//
-//
-//
-// });
+
+//------------------EXAMPLE FROM NOTES---------
+
+// var $h3 = $('<h3>');
+// $h3.text(username);
+// $('#container').append($h3);
 
 //------------------HOW TO RETRIEVE FROM OBJ----------
 // success: function(data, status, xhr){

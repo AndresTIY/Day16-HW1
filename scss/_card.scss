@@ -1,0 +1,13 @@
+.card {
+  background: $color-card-bg;
+  width: 20%;
+  padding-bottom: .3rem;
+  border: 1px solid $color-secondary-font;
+  float: left;
+  margin: 1.3rem 1.15rem;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+}

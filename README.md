@@ -52,5 +52,10 @@
       full_width: 1500,
       }]
   - title => item.title
-  - shop name =>
+  - shop name => item.shop.shop_name
+    - "Shop": {
+        "shop_id": 14339512,
+        "shop_name": "paperkumaco",
   - price => item.price
+
+- input

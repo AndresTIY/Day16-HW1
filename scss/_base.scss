@@ -1,4 +1,33 @@
 body {
   background: $color-bg;
   font-family: sans-serif;
+  font-size: 0.7rem;
+  color: $color-font;
+}
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+p {
+  margin: .5rem;
+}
+.shop {
+  color: $color-secondary-font;
+}
+.price {
+  color: $color-price;
+  float: right;
+}
+input {
+  padding: .3rem 2rem ;
+  font-size: 1rem;
+  width: 30%;
+  border-radius: 5px;
+}
+button {
+  padding: .5rem 2rem;
+  border-radius: 5px;
+  background: #34A8C4;
+  color: $color-card-bg;
 }
